@@ -6,11 +6,14 @@ Simple, fast-to-build Python voice and text assistant with a clean UI. It suppor
 
 ### Features
 
-- **Text chat**: Prompt → response, with basic conversation memory
-- **Voice in/out**: Mic capture → STT (Whisper) → response → TTS playback
-- **Clean UI**: Gradio app (default) with Streamlit option
+- **Text Chat**: Natural language conversation with context awareness
+- **Voice Input/Output**: Speech-to-text (Faster-Whisper) and text-to-speech (pyttsx3)
+- **Conversation Memory**: Maintains conversation history for better responses
+- **Command System**: Built-in commands like `/help`, `/clear`, `/status`, `/time`
+- **Export/Import**: Save and load conversation history
+- **Clean UI**: Modern Gradio interface with voice controls
 - **Local-first**: Runs on CPU with lightweight models; can optionally use cloud APIs
-- **One-file entry**: `app.py` to keep it simple
+- **Configurable**: Customize model size, language, and UI theme
 
 ---
 
@@ -116,13 +119,25 @@ This is intentionally minimal. Interfaces are simple so you can swap implementat
 
 ### Usage
 
-- **Text chat**: Type your prompt, press Enter.
-- **Voice mode**: Click the mic, speak, release to transcribe; the response will play back.
-- **Settings**: Choose STT model size, voice, and language; toggle local vs. API.
+**Text Chat:**
+- Type your message in the text box and press Enter
+- Use commands like `/help`, `/clear`, `/status`, `/time`
+- Export conversations using the Export button
 
-Tips for performance on CPU:
-- Use `WHISPER_MODEL_SIZE=tiny` or `base` if your machine is modest.
-- Prefer local `pyttsx3` over heavy TTS if you only need a basic voice.
+**Voice Features:**
+- **Voice Input**: Click the microphone button, speak, and release to transcribe
+- **Voice Output**: Click "🔊 Speak Response" to hear the assistant's response
+- **Voice Settings**: Configure model size, language, and voice preferences
+
+**Conversation Management:**
+- View conversation history in the chat area
+- Clear conversation history with the Clear button
+- Export conversations to JSON files
+
+**Tips for Performance:**
+- Use `WHISPER_MODEL_SIZE=tiny` or `base` for faster processing on modest hardware
+- Local `pyttsx3` TTS works offline and is lightweight
+- Voice features require microphone access in your browser
 
 ---
 
