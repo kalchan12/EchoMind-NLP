@@ -153,35 +153,10 @@ Hugging Face Spaces (Gradio):
 - Set secrets in the Space if using APIs (e.g., `OPENAI_API_KEY`)
 - For faster cold starts, keep models small and load lazily
 
-Streamlit Community Cloud:
-- Use `streamlit_app.py` as the entry or keep `app.py` as Streamlit app
-- Cache models with `st.cache_resource` to speed up reruns
-
-Docker (optional):
-
-```Dockerfile
-FROM python:3.10-slim
-RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-ENV PYTHONUNBUFFERED=1
-CMD ["python", "app.py"]
-```
 
 ---
 
-### Roadmap (Simple, Fast Dev)
 
-- **Day 1**: Scaffold repo, `app.py` with text chat working (local pipeline)
-- **Day 2**: Add STT (Faster-Whisper) and basic TTS (pyttsx3 or Coqui)
-- **Day 3**: Polish UI, add settings, minimal tests
-- **Day 4**: Optimize latency, finalize deploy to Spaces/Cloud
-
-Stretch (optional): vector memory, document Q&A, tool use
-
----
 
 ### FAQ
 
@@ -191,8 +166,5 @@ Stretch (optional): vector memory, document Q&A, tool use
 
 ---
 
-### License
-
-MIT — see `LICENSE`.
 
 
